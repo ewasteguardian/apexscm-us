@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>APEX lock screen</title>
+<style>
+@font-face{font-family:"Montserrat";src:url("../src/assets/fonts/montserrat-latin.woff2") format("woff2");font-weight:100 900}
+@font-face{font-family:"Manrope";src:url("../src/assets/fonts/manrope-latin.woff2") format("woff2");font-weight:200 800}
+html,body{margin:0;width:1170px;height:2532px;overflow:hidden}
+body{background:#2e395f;font-family:"Montserrat",sans-serif;color:#fff;position:relative}
+/* subtle brand depth: radial glow behind the tile, vignette toward edges */
+.glow{position:absolute;inset:0;background:
+  radial-gradient(ellipse 70% 40% at 50% 60%, rgba(208,179,111,.16), rgba(208,179,111,0) 70%),
+  radial-gradient(ellipse 120% 80% at 50% 50%, rgba(46,57,95,0), rgba(24,31,56,.55) 100%)}
+.band{position:absolute;left:0;right:0;top:920px;height:1260px;display:flex;flex-direction:column;align-items:center}
+.logo{height:92px;width:auto;margin-bottom:84px}
+.tile{width:884px;height:884px;background:#fff;border-radius:56px;display:flex;align-items:center;justify-content:center;box-shadow:0 40px 120px -30px rgba(0,0,0,.45)}
+.tile img{width:754px;height:754px;display:block;image-rendering:pixelated}
+.slogan{margin-top:78px;font-size:38px;font-weight:600;letter-spacing:.32em;text-indent:.32em;color:#d0b36f;text-transform:uppercase}
+.url{margin-top:30px;font-size:30px;font-weight:400;letter-spacing:.08em;color:rgba(255,255,255,.62)}
+/* optional overlay for the preview mock-up */
+.mock{display:none}
+.show-mock .mock{display:block;position:absolute;left:0;right:0;text-align:center;color:#fff;font-family:-apple-system,"SF Pro Display","Manrope",sans-serif}
+.show-mock .date{top:214px;font-size:66px;font-weight:600;letter-spacing:.01em}
+.show-mock .time{top:276px;font-size:288px;font-weight:600;letter-spacing:-.02em;line-height:1;font-family:"Manrope",sans-serif}
+.show-mock .btn{top:2262px;width:150px;height:150px;border-radius:50%;background:rgba(0,0,0,.35);left:auto;right:auto}
+.show-mock .btn.l{left:120px}.show-mock .btn.r{left:900px}
+.show-mock .home{top:2480px;left:435px;width:300px;height:14px;border-radius:7px;background:#fff;opacity:.9}
+.show-mock .guide{top:0;bottom:0;border-top:4px dashed rgba(255,80,80,.6);height:900px;left:0;right:0}
+.show-mock .guide2{top:2230px;border-top:4px dashed rgba(255,80,80,.6);height:0}
+</style></head><body>
+<div class="glow"></div>
+<div class="band">
+  <img class="logo" src="../src/assets/img/logo-reversed.png" alt="APEX">
+  <div class="tile"><img src="build/qr.png" alt="QR code to apexscm.us/services"></div>
+  <div class="slogan">Precision. Security. Scale.</div>
+  <div class="url">apexscm.us/services</div>
+</div>
+<div class="mock date">Saturday, October 18</div>
+<div class="mock time">6:15</div>
+<div class="mock btn l"></div><div class="mock btn r"></div><div class="mock home"></div>
+</body></html>
