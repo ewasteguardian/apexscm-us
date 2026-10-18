@@ -244,7 +244,7 @@ SERVICES = hero(
 <p class="tag">01 · In the United States</p><h3>Electronics: collected, processed, refined.</h3>
 <p>We are an established operator in the collection, secure processing and refining of end-of-life electronics. Our lifecycle model connects data destruction and refurbishment with material recovery and reintegration, under chain-of-custody control and documented outcomes.</p>
 <ul><li>Secure collection and certified data destruction</li><li>Processing, refurbishment and material recovery</li><li>Refining and reintegration into U.S. supply chains</li></ul></article>
-<article class="service reveal"><figure><img src="/assets/img/field-surface.webp" alt="Surface excavation at the Philippine site" loading="lazy" style="object-position:center 45%"></figure>
+<article class="service reveal"><figure><img src="/assets/img/mine-aerial.webp" alt="Terraced open-pit mine in tropical highlands at sunrise" loading="lazy"></figure>
 <p class="tag">02 · In the Philippines</p><h3>Mining gold and silver, with more in the ground.</h3>
 <p>We mine gold and silver for ourselves. The same workings carry a wider set of critical minerals that we are open to supplying onward. Our field record documents surface excavation and underground workings, and our technical review covers gold-focused exploration north of Masara in Mindanao.</p>
 <ul><li>Own mining operations and field program</li><li>Geological, alteration and aeromagnetic review</li><li>Export license in place for U.S.-bound supply</li></ul></article>
@@ -262,9 +262,10 @@ SERVICES = hero(
 <div class="reveal"><span class="eyebrow" style="display:block;margin-bottom:.75rem">The partner we're seeking</span><h2 class="h2 h2-sm">A U.S. refinery or off-taker that needs a dependable, licensed source of critical minerals.</h2>
 <p class="sub" style="margin-top:1.25rem">We bring the ground, the operations and the export license; the right partner brings the demand. Our mineral supply is directed exclusively to the United States.</p>
 <div style="margin-top:2rem"><a class="btn btn-navy" href="{CONTACT}">Let's secure the supply chain together {I["arrow"]}</a></div></div>
-<div class="minerals reveal"><h3>What our mine produces</h3>
-<div class="mrow"><span class="lbl">Mined for our own account</span><div class="list">{"".join(f"<span>{m}</span>" for m in MINERALS_OWN)}</div></div>
-<div class="mrow"><span class="lbl">Open to U.S. off-take partners</span><div class="list">{"".join(f"<span>{m}</span>" for m in MINERALS_PARTNER)}</div></div>
+<div class="minerals reveal"><figure><img src="/assets/img/minerals.webp" alt="Row of raw critical-mineral ore specimens" loading="lazy"></figure>
+<h3>What our mine produces</h3>
+<div class="mrow"><span class="lbl">Mined for our own account</span><ul class="chips">{"".join(f"<li>{m}</li>" for m in MINERALS_OWN)}</ul></div>
+<div class="mrow"><span class="lbl">Open to U.S. off-take partners</span><ul class="chips">{"".join(f"<li>{m}</li>" for m in MINERALS_PARTNER)}</ul></div>
 </div></div></section>
 
 <section class="section" id="overview"><div class="wrap">

@@ -194,15 +194,17 @@ main{padding-top:4rem}
 .pillars3 p{font-size:.95rem;color:rgba(255,255,255,.75);line-height:1.7}
 .pillars3 > div{border-top:1px solid rgba(255,255,255,.18);padding-top:1.5rem}
 
-.minerals{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);padding:1.5rem}
-@media(min-width:768px){.minerals{padding:2rem}}
-.minerals h3{font-family:var(--body);font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--primary);margin-bottom:1.5rem}
-.mrow{display:grid;gap:.5rem;padding:1rem 0;border-top:1px solid var(--border)}
-@media(min-width:640px){.mrow{grid-template-columns:14rem 1fr;gap:1.5rem;align-items:baseline}}
-.mrow .lbl{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-fg)}
-.mrow .list{display:flex;flex-wrap:wrap;gap:.5rem .75rem;font-family:var(--head);font-size:1.125rem;font-weight:500}
-.mrow .list span+span::before{content:"·";color:var(--accent);margin-right:.75rem}
-
+.minerals{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);padding:0 0 .5rem}
+.minerals figure{margin:0 0 1.5rem;aspect-ratio:21/9;overflow:hidden;background:var(--limestone)}
+.minerals figure img{width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.minerals h3{font-family:var(--body);font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--primary);margin:0 1.5rem 1rem}
+.mrow{padding:1.25rem 1.5rem;border-top:1px solid var(--border)}
+.mrow .lbl{display:block;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-fg);margin-bottom:.75rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips li{font-family:var(--head);font-size:1rem;font-weight:500;color:var(--fg);background:var(--muted);border:1px solid var(--border);padding:.4rem .85rem;line-height:1.2}
+.mrow:first-of-type .chips li{background:#f7efd9;border-color:#e6d6a8;color:var(--primary);font-weight:600}
+@media(min-width:768px){.minerals h3{margin:0 2rem 1rem}.mrow{padding:1.5rem 2rem}}
+@media(max-width:767px){.btn{height:auto;min-height:2.75rem;padding:.7rem 1.25rem;line-height:1.25;text-align:center}}
 .deck-head{display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-end;justify-content:space-between;margin-bottom:3rem}
 .deck-pages{display:grid;gap:1.5rem}
 @media(min-width:768px){.deck-pages{grid-template-columns:repeat(3,1fr)}}
