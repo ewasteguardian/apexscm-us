@@ -225,10 +225,9 @@ SOLUTIONS = hero(
 
 <section class="section"><div class="wrap">
 <div class="section-head reveal"><span class="eyebrow">Platform Pillars</span><h2 class="h2">Integrated lifecycle control.</h2></div>
-{"".join(f'''<article class="pillar reveal"><div class="n">{n}</div>
-<div><div class="icon">{I[ic]}</div><h3>{h}</h3><p class="hook">{hook}</p></div>
+{"".join(f'''<article class="pillar reveal"><div><div class="icon">{I[ic]}</div><h3>{h}</h3><p class="hook">{hook}</p></div>
 <p class="desc">{d}</p>
-<div class="impact"><span class="lbl">Enterprise Impact</span>{imp}</div></article>''' for n,(ic,h,hook,d,imp) in enumerate(PILLARS,1))}
+<div class="impact"><span class="lbl">Enterprise Impact</span>{imp}</div></article>''' for ic,h,hook,d,imp in PILLARS)}
 </div></section>
 
 <section class="section section-muted"><div class="wrap two-col two-col-top">
