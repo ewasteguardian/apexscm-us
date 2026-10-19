@@ -272,10 +272,6 @@ SERVICES = hero(
 <div class="deck-head reveal"><div><span class="eyebrow" style="display:block;margin-bottom:.75rem">Company overview · NACM Summit 2026</span><h2 class="h2">Operations &amp; exploration overview.</h2>
 <p class="sub" style="margin-top:1rem;max-width:40rem">Three pages: who we are and what we offer, the geological basis for the Philippine exploration area, and the documented fieldwork with the recommended next steps.</p></div>
 <a class="btn btn-navy" href="{DECK}" download="APEX-SCM-Operations-Overview.pdf">Download PDF {I["download"]}</a></div>
-<div class="deck-pages reveal">
-{"".join(f'<figure style="margin:0"><a href="{DECK}#page={i}" target="_blank" rel="noopener"><img src="/assets/deck/page-{i}.webp" alt="Overview page {i}: {c}" width="935" height="1210" loading="lazy"></a><figcaption>0{i} · {c}</figcaption></figure>' for i,c in [(1,"Company overview"),(2,"Geography, geology &amp; geophysics"),(3,"Field activity &amp; exploration pathway")])}
-</div>
-<div class="deck-embed reveal"><object data="{DECK}#view=FitH" type="application/pdf" aria-label="APEX SCM operations overview PDF"><p style="padding:2rem">Your browser can't display the PDF inline. <a href="{DECK}">Download it here</a>.</p></object></div>
 <p class="deck-note">Maps and field imagery are drawn from the supplied technical briefing and company field record. The review is distinct from a completed site-specific survey or a mineral resource estimate.</p>
 </div></section>
 
@@ -290,7 +286,7 @@ PAGES = [
     dict(path="/", title="Home", desc="APEX SCM operates a fully integrated circular supply platform for enterprise technology. Precision. Security. Scale.", body=HOME),
     dict(path="/about/", title="About", desc="APEX operates as infrastructure, not a recycler. Purpose, vision, core values and strategic objectives.", body=ABOUT),
     dict(path="/solutions/", title="Solutions", desc="Five pillars of enterprise circular supply infrastructure: security, value recovery, lifecycle integration, ESG performance and partnership.", body=SOLUTIONS),
-    dict(path="/services/", title="Services", desc="U.S. electronics collection, processing and refining. Philippine mining of gold, silver and critical minerals, export licensed, seeking a U.S. off-take partner.", body=SERVICES, og_image="/assets/deck/page-1.webp"),
+    dict(path="/services/", title="Services", desc="U.S. electronics collection, processing and refining. Philippine mining of gold, silver and critical minerals, export licensed, seeking a U.S. off-take partner.", body=SERVICES, og_image="/assets/img/mine-aerial.webp"),
 ]
 
 # Legacy Base44 routes (case-sensitive on GitHub Pages) -> new paths
