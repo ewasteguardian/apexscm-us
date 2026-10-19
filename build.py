@@ -13,7 +13,11 @@ OUT = ROOT / "docs"
 SITE = "https://apexscm.us"
 BASE = os.environ.get("BASE", "").rstrip("/")  # e.g. "/apexscm-us" for a github.io preview build
 EMAIL = "info@apexscm.us"
-CONTACT = f"mailto:{EMAIL}?subject=Enquiry%20via%20apexscm.us"
+MAILTO = f"mailto:{EMAIL}?subject=Enquiry%20via%20apexscm.us"
+CONTACT = "/contact/"
+# Web3Forms access key for the contact form (public by design; it only lets the form submit to info@).
+# Empty = form hands off to the visitor's mail app until the key is set.
+WEB3FORMS_KEY = ""
 
 NAV = [("Home", "/"), ("About", "/about/"), ("Solutions", "/solutions/"), ("Services", "/services/")]
 
@@ -285,18 +289,72 @@ SERVICES = hero(
 <span class="eyebrow">Our commercial focus: the United States</span>
 <h2 class="h2">Let's secure the supply chain together.</h2>
 <p class="sub">Refiners, off-takers, industry and capital partners. We welcome the conversation.</p>
-<a class="btn btn-gold" href="{CONTACT}">{EMAIL} {I["arrow"]}</a>
+<a class="btn btn-gold" href="{MAILTO}">{EMAIL} {I["arrow"]}</a>
 </div></section>'''
+
+TOPICS = ["Enterprise electronics & ITAD", "Critical-mineral supply & off-take", "Partnership & investment", "Media & speaking", "Something else"]
+
+def field(name, label, *, kind="input", type="text", required=True, autocomplete=None, full=False, placeholder=""):
+    opt = "" if required else '<span class="opt">Optional</span>'
+    req = " required" if required else ""
+    ac = f' autocomplete="{autocomplete}"' if autocomplete else ""
+    if kind == "select":
+        opts = "".join(f"<option>{t}</option>" for t in TOPICS)
+        ctrl = f'<select id="f-{name}" name="{name}"{req}>{opts}</select>'
+    elif kind == "textarea":
+        ctrl = f'<textarea id="f-{name}" name="{name}" rows="6" placeholder="{placeholder}"{req}></textarea>'
+    else:
+        ctrl = f'<input id="f-{name}" name="{name}" type="{type}" placeholder="{placeholder}"{ac}{req}>'
+    return f'<div class="field{" full" if full else ""}"><label for="f-{name}">{label}{opt}</label>{ctrl}</div>'
+
+CONTACT_PAGE = hero(
+    img="hero-about.webp", eyebrow="Contact",
+    h1='Let\'s talk.<br><span class="gold">We reply within one business day.</span>',
+    lead="Refiners and off-take partners, enterprise technology teams, capital and industry partners. Tell us what you need and the right person at APEX will come back to you.",
+    actions=f'<a class="btn btn-gold" href="#form">Send a Message {I["arrow"]}</a><a class="btn btn-outline" href="{MAILTO}">{EMAIL}</a>',
+) + f'''
+<section class="section" id="form"><div class="wrap contact">
+<form class="form reveal" data-form data-key="{WEB3FORMS_KEY}" action="https://api.web3forms.com/submit" method="POST" novalidate>
+<input type="hidden" name="subject" value="New enquiry via apexscm.us"><input type="hidden" name="from_name" value="APEX SCM Website"><input type="hidden" name="redirect" value="{SITE}/contact/thanks/">
+<input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="fgrid">
+{field("name", "Full name", autocomplete="name")}
+{field("company", "Company", autocomplete="organization")}
+{field("email", "Work email", type="email", autocomplete="email")}
+{field("phone", "Phone", type="tel", required=False, autocomplete="tel")}
+{field("topic", "I am enquiring about", kind="select", full=True)}
+{field("message", "Message", kind="textarea", full=True, placeholder="A few lines on what you need, volumes or timelines if relevant, and how you would like us to follow up.")}
+</div>
+<div class="form-foot"><button class="btn btn-gold" type="submit">Send Message {I["arrow"]}</button><span class="form-status" role="status" aria-live="polite"></span></div>
+<p class="form-note">By sending this form you agree that APEX SCM Corp. may contact you about your enquiry. Your details are used for that purpose only and are never shared.</p>
+<div class="form-done">{I["check"]}<h2 class="h2 h2-sm">Thank you. Your message is with us.</h2><p class="sub" style="margin-top:1rem">A member of our team will reply within one business day.</p></div>
+</form>
+<aside class="aside reveal">
+<div><h3>Direct</h3><a class="big" href="{MAILTO}">{EMAIL}</a><p class="sub" style="margin-top:.5rem;font-size:.9rem">Monitored every business day.</p></div>
+<div><h3>Where we operate</h3><p class="sub">North America · Europe · Asia-Pacific</p></div>
+<div><h3>What happens next</h3><ol class="steps">
+<li><b>01</b><span>We confirm receipt of your message.</span></li>
+<li><b>02</b><span>A named point of contact replies within one business day.</span></li>
+<li><b>03</b><span>A scoped conversation, under NDA where it matters.</span></li>
+</ol></div>
+</aside>
+</div></section>'''
+
+THANKS = f'''
+<section class="section"><div class="wrap cta" style="padding-top:4rem"><span class="eyebrow">Message received</span><h2 class="h2">Thank you. Your message is with us.</h2>
+<p class="sub">A member of our team will reply within one business day.</p><a class="btn btn-navy" href="/">Back to Home {I["arrow"]}</a></div></section>'''
 
 PAGES = [
     dict(path="/", title="Home", desc="APEX SCM: circular supply infrastructure for enterprise technology in the United States, and export-licensed critical-mineral supply from our international mining operations. Precision. Security. Scale.", body=HOME),
     dict(path="/about/", title="About", desc="APEX operates as infrastructure, not a recycler. Purpose, vision, core values and strategic objectives.", body=ABOUT),
     dict(path="/solutions/", title="Solutions", desc="Five pillars of enterprise circular supply infrastructure: security, value recovery, lifecycle integration, ESG performance and partnership, plus critical-mineral supply.", body=SOLUTIONS),
     dict(path="/services/", title="Services", desc="U.S. electronics collection, processing and refining. Primary gold and silver production at our international mining operations with co-product critical minerals, export licensed, allocated to U.S. off-take partners.", body=SERVICES, og_image="/assets/img/mine-aerial.webp"),
+    dict(path="/contact/", title="Contact", desc="Contact APEX SCM Corp. Refiners, off-take partners, enterprise technology teams and capital partners: we reply within one business day.", body=CONTACT_PAGE),
+    dict(path="/contact/thanks/", title="Message received", desc="Your message has reached APEX SCM Corp.", body=THANKS, sitemap=False),
 ]
 
 # Legacy Base44 routes (case-sensitive on GitHub Pages) -> new paths
-REDIRECTS = {"/Home/": "/", "/About/": "/about/", "/Solutions/": "/solutions/", "/Services/": "/services/"}
+REDIRECTS = {"/Home/": "/", "/About/": "/about/", "/Solutions/": "/solutions/", "/Services/": "/services/", "/Contact/": "/contact/"}
 
 def redirect(target):
     return f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Redirecting…</title><meta http-equiv="refresh" content="0;url={target}"><link rel="canonical" href="{SITE}{target}"><script>location.replace("{target}")</script></head><body><a href="{target}">Continue to {target}</a></body></html>'
@@ -320,7 +378,7 @@ def build():
     for p in PAGES:
         d = OUT / p["path"].strip("/")
         d.mkdir(parents=True, exist_ok=True)
-        (d / "index.html").write_text(rebase(page(**p)), encoding="utf-8")
+        (d / "index.html").write_text(rebase(page(**{k: v for k, v in p.items() if k != "sitemap"})), encoding="utf-8")
     for old, new in REDIRECTS.items():
         d = OUT / old.strip("/")
         d.mkdir(parents=True, exist_ok=True)
@@ -330,7 +388,7 @@ def build():
         (OUT / "CNAME").write_text("apexscm.us\n")
     (OUT / ".nojekyll").write_text("")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
-    urls = "".join(f"<url><loc>{SITE}{p['path']}</loc></url>" for p in PAGES)
+    urls = "".join(f"<url><loc>{SITE}{p['path']}</loc></url>" for p in PAGES if p.get("sitemap", True))
     (OUT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>')
     (OUT / "manifest.json").write_text('{"name":"APEX SCM","short_name":"APEX SCM","start_url":"/","display":"browser","background_color":"#faf8f5","theme_color":"#2e395f","icons":[{"src":"/assets/img/apple-touch-icon.png","sizes":"180x180","type":"image/png"}]}')
     n = sum(1 for _ in OUT.rglob("*") if _.is_file())

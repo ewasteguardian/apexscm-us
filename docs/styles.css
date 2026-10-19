@@ -227,6 +227,37 @@ main{padding-top:4rem}
 .foot-bottom p{font-size:.75rem;color:rgba(255,255,255,.5)}
 .foot-bottom .tag{font-size:.7rem;letter-spacing:.25em;font-weight:600;color:var(--accent)}
 
+/* Contact page */
+.contact{display:grid;gap:3rem}
+@media(min-width:960px){.contact{grid-template-columns:3fr 2fr;gap:4.5rem;align-items:start}}
+.form{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--accent);padding:2rem 1.25rem;position:relative}
+@media(min-width:768px){.form{padding:2.75rem 2.5rem}}
+.fgrid{display:grid;gap:1.25rem}
+@media(min-width:640px){.fgrid{grid-template-columns:1fr 1fr;gap:1.5rem}.fgrid .full{grid-column:1/-1}}
+.field label{display:block;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);margin-bottom:.5rem}
+.field .opt{font-weight:400;letter-spacing:.04em;text-transform:none;color:var(--muted-fg);margin-left:.5rem}
+.field input,.field select,.field textarea{display:block;width:100%;font:inherit;font-size:1rem;color:var(--fg);background:var(--bg);border:1px solid var(--border);border-radius:0;padding:.85rem 1rem;-webkit-appearance:none;appearance:none;transition:border-color .2s,box-shadow .2s}
+.field textarea{min-height:9.5rem;resize:vertical}
+.field select{padding-right:2.75rem;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232e395f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-size:1rem;background-position:right 1rem center}
+.field input::placeholder,.field textarea::placeholder{color:#9aa0b8}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(46,57,95,.12)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.form-foot{display:flex;flex-wrap:wrap;gap:1rem 1.5rem;align-items:center;margin-top:1.75rem}
+.form-status{font-size:.875rem;color:var(--muted-fg)}
+.form-note{font-size:.78rem;color:var(--muted-fg);line-height:1.6;margin-top:1.25rem}
+.form-done{display:none;text-align:center;padding:2.5rem 0 1.5rem}
+.form-done svg{width:3rem;height:3rem;color:var(--accent);margin:0 auto 1.25rem}
+.form.sent .fgrid,.form.sent .form-foot,.form.sent .form-note{display:none}
+.form.sent .form-done{display:block}
+.aside h3{font-family:var(--body);font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem}
+.aside > div + div{margin-top:2.25rem;padding-top:2.25rem;border-top:1px solid var(--border)}
+.aside .big{font-family:var(--head);font-size:1.3rem;font-weight:600;color:var(--primary);text-decoration:none;word-break:break-all}
+.aside .big:hover{color:var(--accent)}
+.steps{list-style:none;padding:0;margin:0}
+.steps li{display:flex;gap:1rem;font-size:.9rem;line-height:1.6;color:var(--muted-fg)}
+.steps li+li{margin-top:.9rem}
+.steps b{color:var(--accent);font-weight:600;letter-spacing:.1em;flex-shrink:0}
+
 /* Reveal on scroll (progressive enhancement) */
 .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .js .reveal.in{opacity:1;transform:none}
