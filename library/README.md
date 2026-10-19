@@ -5,7 +5,7 @@ Illustrative, not photographs of APEX sites.
 
 | File | Subject | In use |
 |---|---|---|
-| mining-1.png | Terraced open-pit mine, tropical highlands, sunrise | Services page, Philippines card |
+| mining-1.png | Terraced open-pit mine, tropical highlands, sunrise | Services page, international mining card |
 | mining-2.png | Underground drift with quartz vein | — |
 | mining-3.png | Gold-bearing quartz specimen on slate | — |
 | mining-4.png | Drill core trays with geologist's hand | — |

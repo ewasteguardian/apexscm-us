@@ -208,8 +208,6 @@ main{padding-top:4rem}
 .mrow:first-of-type .chips li{background:#f7efd9;border-color:#e6d6a8;color:var(--primary);font-weight:600}
 @media(min-width:768px){.minerals h3{margin:0 2rem 1rem}.mrow{padding:1.5rem 2rem}}
 @media(max-width:767px){.btn{height:auto;min-height:2.75rem;padding:.7rem 1.25rem;line-height:1.25;text-align:center}}
-.deck-head{display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-end;justify-content:space-between;margin-bottom:3rem}
-.deck-note{font-size:.8rem;color:var(--muted-fg);margin-top:1rem}
 
 /* ---------- Footer ---------- */
 .site-footer{background:var(--primary);color:#fff}

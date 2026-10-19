@@ -14,7 +14,6 @@ SITE = "https://apexscm.us"
 BASE = os.environ.get("BASE", "").rstrip("/")  # e.g. "/apexscm-us" for a github.io preview build
 EMAIL = "info@apexscm.us"
 CONTACT = f"mailto:{EMAIL}?subject=Enquiry%20via%20apexscm.us"
-DECK = "/assets/deck/apex-scm-operations-overview.pdf"
 
 NAV = [("Home", "/"), ("About", "/about/"), ("Solutions", "/solutions/"), ("Services", "/services/")]
 
@@ -29,7 +28,6 @@ I = {
     "layers": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9.5 5.5v9L12 22l-9.5-5.5v-9z"/><path d="M2.5 7.5 12 13l9.5-5.5"/><path d="M12 13v9"/></svg>',
     "file": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8"/></svg>',
     "lock": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
-    "download": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>',
     "menu": '<svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>',
 }
 
@@ -51,7 +49,7 @@ def footer():
 <div class="foot-grid">
 <div class="foot-brand"><img src="/assets/img/logo-reversed.png" alt="APEX" width="1024" height="319"><p>Integrated circular supply infrastructure for enterprise technology. Precision. Security. Scale.</p></div>
 <div><p class="foot-h">Navigation</p><ul class="foot-links">{links}<li><a href="{CONTACT}">Contact</a></li></ul></div>
-<div><p class="foot-h">Contact</p><div class="foot-contact"><a href="mailto:{EMAIL}">{EMAIL}</a><span>North America · Europe · Asia-Pacific</span></div></div>
+<div><p class="foot-h">Contact</p><div class="foot-contact"><a href="mailto:{EMAIL}">{EMAIL}</a><span>North America · Europe</span></div></div>
 </div>
 <div class="foot-bottom"><p>&copy; 2026 APEX SCM Corp. All rights reserved.</p><span class="tag">PRECISION. SECURITY. SCALE.</span></div>
 </div></footer>'''
@@ -134,8 +132,8 @@ HOME = hero(
 <a class="service service-link reveal" href="/services/"><figure><img src="/assets/img/hero-home.webp" alt="Enterprise server infrastructure" loading="lazy" style="object-position:center 40%"></figure>
 <p class="tag">01 · United States</p><h3>Collection, processing and refining of enterprise electronics.</h3>
 <p>Secure, documented recovery of end-of-life technology under chain-of-custody control, returning material value to U.S. supply chains.</p></a>
-<a class="service service-link reveal" href="/services/"><figure><img src="/assets/img/mine-aerial.webp" alt="Terraced open-pit mine in tropical highlands" loading="lazy"></figure>
-<p class="tag">02 · Philippines</p><h3>Primary gold and silver production, with co-product critical minerals.</h3>
+<a class="service service-link reveal" href="/services/"><figure><img src="/assets/img/mine-aerial.webp" alt="Terraced open-pit mine at sunrise" loading="lazy"></figure>
+<p class="tag">02 · International</p><h3>Primary gold and silver production, with co-product critical minerals.</h3>
 <p>Export-licensed supply of tungsten, copper, uranium, cobalt, antimony, zinc, lead and iron, allocated exclusively to U.S. refining and off-take partners.</p></a>
 </div>
 <div class="reveal" style="margin-top:2rem"><a class="btn btn-navy" href="/services/">Explore Our Services {I["arrow"]}</a></div>
@@ -191,10 +189,10 @@ ABOUT = hero(
 {cards([
     ("check", "Establish Category Leadership", "Position APEX as the benchmark for integrated circular supply infrastructure — not transactional ITAD."),
     ("check", "Drive Enterprise Adoption", "Embed lifecycle recovery into enterprise procurement and risk frameworks as a standard operating requirement."),
-    ("check", "Expand Platform Integration", "Scale geographically and vertically, from electronics recovery and refining in the United States to primary mineral production in the Philippines."),
+    ("check", "Expand Platform Integration", "Scale geographically and vertically, from electronics recovery and refining in the United States to primary mineral production at our international mining operations."),
     ("check", "Increase Margin Capture", "Control more of the lifecycle, from collection to refined material, to optimize value recovery and refinement economics."),
     ("check", "Institutionalize ESG Performance", "Deliver quantifiable sustainability metrics that meet investor, regulatory, and stakeholder scrutiny."),
-    ("check", "Secure Critical-Mineral Supply", "Allocate export-licensed co-product minerals from our Philippine operations to U.S. refining and off-take partners."),
+    ("check", "Secure Critical-Mineral Supply", "Allocate export-licensed co-product minerals from our international mining operations to U.S. refining and off-take partners."),
 ], cls="grid grid-3")}
 </div></section>'''
 
@@ -239,17 +237,17 @@ SOLUTIONS = hero(
 <section class="section section-navy"><div class="wrap cta reveal">
 <span class="eyebrow">Most competitors specialize in one stage.</span>
 <h2 class="h2">Few control the full system.</h2>
-<p class="sub">From secure collection and refining in the United States to primary mineral production across the Pacific, APEX operates the stages others outsource.</p>
+<p class="sub">From secure collection and refining in the United States to primary mineral production at our international operations, APEX operates the stages others outsource.</p>
 <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center"><a class="btn btn-gold" href="{CONTACT}">Engage APEX {I["arrow"]}</a><a class="btn btn-outline" href="/services/">Critical Minerals Supply</a></div>
 </div></section>'''
 
 MINERALS_OWN = ["Gold", "Silver"]
 MINERALS_PARTNER = ["Tungsten", "Copper", "Uranium", "Cobalt", "Antimony", "Zinc", "Lead", "Iron"]
 SERVICES = hero(
-    img="rock-specimen.webp", eyebrow="U.S. electronics recovery · Philippine mining · Export licensed",
+    img="rock-specimen.webp", eyebrow="U.S. electronics recovery · International mining · Export licensed",
     h1='Critical minerals.<br><span class="gold">Secured for America.</span>',
-    lead="APEX SCM collects, processes and refines electronics in the United States. Across the Pacific, our Philippine operations produce gold and silver as primary products, and the same mineralized ground hosts the critical minerals American industry depends on. With our export license in place, we are seeking a U.S. refinery or off-take partner to strengthen their supply chain.",
-    actions=f'<a class="btn btn-gold" href="#overview">View the Overview {I["arrow"]}</a><a class="btn btn-outline" href="{CONTACT}">Start a Conversation</a>',
+    lead="APEX SCM collects, processes and refines electronics in the United States. Internationally, our mining operations produce gold and silver as primary products, and the same mineralized ground hosts the critical minerals American industry depends on. With our export license in place, we are seeking a U.S. refinery or off-take partner to strengthen their supply chain.",
+    actions=f'<a class="btn btn-gold" href="#portfolio">View Our Portfolio {I["arrow"]}</a><a class="btn btn-outline" href="{CONTACT}">Start a Conversation</a>',
 ) + f'''
 <section class="section"><div class="wrap">
 <div class="section-head reveal"><span class="eyebrow">Two operations. One supply chain.</span><h2 class="h2">What we do, and where.</h2></div>
@@ -258,21 +256,21 @@ SERVICES = hero(
 <p class="tag">01 · In the United States</p><h3>Electronics: collected, processed, refined.</h3>
 <p>We are an established operator in the collection, secure processing and refining of end-of-life electronics. Our lifecycle model connects data destruction and refurbishment with material recovery and reintegration, under chain-of-custody control and documented outcomes.</p>
 <ul><li>Secure collection and certified data destruction</li><li>Processing, refurbishment and material recovery</li><li>Refining and reintegration into U.S. supply chains</li></ul></article>
-<article class="service reveal"><figure><img src="/assets/img/mine-aerial.webp" alt="Terraced open-pit mine in tropical highlands at sunrise" loading="lazy"></figure>
-<p class="tag">02 · In the Philippines</p><h3>Primary gold and silver production. A broader mineral endowment.</h3>
-<p>Our Philippine operations produce gold and silver as primary products, processed and refined within the APEX value chain. The same mineralized system hosts a broader suite of critical minerals, which we allocate to qualified U.S. refining and off-take partners. Our field record documents surface excavation and underground workings, and our technical review covers gold-focused exploration north of Masara in Mindanao.</p>
+<article class="service reveal"><figure><img src="/assets/img/mine-aerial.webp" alt="Terraced open-pit mine at sunrise" loading="lazy"></figure>
+<p class="tag">02 · International</p><h3>Primary gold and silver production. A broader mineral endowment.</h3>
+<p>Our international mining operations produce gold and silver as primary products, processed and refined within the APEX value chain. The same mineralized system hosts a broader suite of critical minerals, which we allocate to qualified U.S. refining and off-take partners. Our field record documents surface excavation and underground workings, and our technical review covers gold-focused exploration across the licensed area.</p>
 <ul><li>Primary production processed within the APEX value chain</li><li>Geological, alteration and aeromagnetic review</li><li>Export license in place for U.S.-bound supply</li></ul></article>
 </div></div></section>
 
 <section class="section section-navy"><div class="wrap">
 <div class="section-head reveal" style="margin-bottom:3rem"><span class="eyebrow">What we bring</span><h2 class="h2">The foundation, the access, the license.</h2></div>
 <div class="pillars3 reveal">
-<div><h3>01 · The foundation</h3><p>Established operations on both sides of the Pacific: electronics processing and refining in the USA, mining in the Philippines.</p></div>
+<div><h3>01 · The foundation</h3><p>Established operations at home and abroad: electronics processing and refining in the United States, and mining internationally.</p></div>
 <div><h3>02 · The access</h3><p>Our own operations: primary gold and silver production, with co-product tungsten, copper, uranium, cobalt, antimony, zinc, lead and iron.</p></div>
-<div><h3>03 · The license</h3><p>An export license in hand, so material can move from the Philippines to refineries in the United States.</p></div>
+<div><h3>03 · The license</h3><p>An export license in hand, so material can move from our international operations to refineries in the United States.</p></div>
 </div></div></section>
 
-<section class="section section-muted"><div class="wrap two-col two-col-top">
+<section class="section section-muted" id="portfolio"><div class="wrap two-col two-col-top">
 <div class="reveal"><span class="eyebrow" style="display:block;margin-bottom:.75rem">The partner we're seeking</span><h2 class="h2 h2-sm">A U.S. refinery or off-taker that needs a dependable, licensed source of critical minerals.</h2>
 <p class="sub" style="margin-top:1.25rem">We bring the resource, the operations and the export license; the right partner brings the demand. Our critical-mineral supply is allocated exclusively to the United States.</p>
 <div style="margin-top:2rem"><a class="btn btn-navy" href="{CONTACT}">Let's secure the supply chain together {I["arrow"]}</a></div></div>
@@ -282,12 +280,6 @@ SERVICES = hero(
 <div class="mrow"><span class="lbl">Co-product supply · Allocated to U.S. off-take partners</span><ul class="chips">{"".join(f"<li>{m}</li>" for m in MINERALS_PARTNER)}</ul></div>
 </div></div></section>
 
-<section class="section" id="overview"><div class="wrap">
-<div class="deck-head reveal"><div><span class="eyebrow" style="display:block;margin-bottom:.75rem">Company overview · NACM Summit 2026</span><h2 class="h2">Operations &amp; exploration overview.</h2>
-<p class="sub" style="margin-top:1rem;max-width:40rem">Three pages: who we are and what we offer, the geological basis for the Philippine exploration area, and the documented fieldwork with the recommended next steps.</p></div>
-<a class="btn btn-navy" href="{DECK}" download="APEX-SCM-Operations-Overview.pdf">Download PDF {I["download"]}</a></div>
-<p class="deck-note">Maps and field imagery are drawn from the supplied technical briefing and company field record. The review is distinct from a completed site-specific survey or a mineral resource estimate.</p>
-</div></section>
 
 <section class="section section-navy"><div class="wrap cta reveal">
 <span class="eyebrow">Our commercial focus: the United States</span>
@@ -297,10 +289,10 @@ SERVICES = hero(
 </div></section>'''
 
 PAGES = [
-    dict(path="/", title="Home", desc="APEX SCM: circular supply infrastructure for enterprise technology in the United States, and export-licensed critical-mineral supply from our Philippine operations. Precision. Security. Scale.", body=HOME),
+    dict(path="/", title="Home", desc="APEX SCM: circular supply infrastructure for enterprise technology in the United States, and export-licensed critical-mineral supply from our international mining operations. Precision. Security. Scale.", body=HOME),
     dict(path="/about/", title="About", desc="APEX operates as infrastructure, not a recycler. Purpose, vision, core values and strategic objectives.", body=ABOUT),
     dict(path="/solutions/", title="Solutions", desc="Five pillars of enterprise circular supply infrastructure: security, value recovery, lifecycle integration, ESG performance and partnership, plus critical-mineral supply.", body=SOLUTIONS),
-    dict(path="/services/", title="Services", desc="U.S. electronics collection, processing and refining. Primary gold and silver production in the Philippines with co-product critical minerals, export licensed, allocated to U.S. off-take partners.", body=SERVICES, og_image="/assets/img/mine-aerial.webp"),
+    dict(path="/services/", title="Services", desc="U.S. electronics collection, processing and refining. Primary gold and silver production at our international mining operations with co-product critical minerals, export licensed, allocated to U.S. off-take partners.", body=SERVICES, og_image="/assets/img/mine-aerial.webp"),
 ]
 
 # Legacy Base44 routes (case-sensitive on GitHub Pages) -> new paths

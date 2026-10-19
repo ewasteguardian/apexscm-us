@@ -3,7 +3,7 @@
 Hand-coded static website for APEX SCM Corp. No framework, no build dependencies beyond Python 3.
 
 - `build.py` — single source of truth: layout, navigation, page content, metadata. Run `python3 build.py` to regenerate `docs/`.
-- `src/` — stylesheet, small JS (mobile nav + reveal), fonts (self-hosted), images, and the NACM Summit overview PDF.
+- `src/` — stylesheet, small JS (mobile nav + reveal), fonts (self-hosted) and images.
 - `docs/` — generated output served by GitHub Pages (branch `main`, folder `/docs`). Do not edit by hand.
 
 Preview build for the github.io address: `BASE=/apexscm-us python3 build.py`.
