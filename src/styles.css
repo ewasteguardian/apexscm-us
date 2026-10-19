@@ -178,6 +178,9 @@ main{padding-top:4rem}
 @media(min-width:768px){.split{grid-template-columns:1fr 1fr}}
 .service{background:var(--card);border:1px solid var(--border);padding:2rem 1.5rem;display:flex;flex-direction:column}
 @media(min-width:768px){.service{padding:2.5rem 2rem}}
+.service-link{text-decoration:none;color:inherit;transition:transform .25s,box-shadow .25s}
+.service-link:hover{transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(30,38,64,.45)}
+.service-link h3{color:var(--fg)}
 .service .tag{font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
 .service h3{font-size:1.5rem;margin-bottom:1rem}
 .service p{font-size:.95rem;color:var(--muted-fg);line-height:1.7}

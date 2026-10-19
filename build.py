@@ -110,7 +110,7 @@ HOME = hero(
     img="hero-home.webp", home=True, eyebrow="Precision. Security. Scale.",
     h1='Circular Supply<br><span class="gold">Infrastructure</span><br>for Enterprise.',
     lead="APEX operates a fully integrated circular supply platform built for enterprise environments where control, accountability, and performance are non-negotiable.",
-    actions=f'<a class="btn btn-gold" href="/solutions/">Our Solutions {I["arrow"]}</a><a class="btn btn-outline" href="/about/">About APEX</a>',
+    actions=f'<a class="btn btn-gold" href="/solutions/">Our Solutions {I["arrow"]}</a><a class="btn btn-outline" href="/services/">Critical Minerals Supply</a>',
 ) + f'''
 <section class="section-tight section-muted bordered"><div class="wrap reveal">
 <p class="eyebrow" style="display:block;margin-bottom:1rem">Strategic Positioning</p>
@@ -128,18 +128,31 @@ HOME = hero(
 ])}
 </div></section>
 
+<section class="section section-muted"><div class="wrap">
+<div class="section-head reveal"><span class="eyebrow">Two operations. One supply chain.</span><h2 class="h2">Electronics recovered in America.<br>Minerals secured for America.</h2></div>
+<div class="split">
+<a class="service service-link reveal" href="/services/"><figure><img src="/assets/img/hero-home.webp" alt="Enterprise server infrastructure" loading="lazy" style="object-position:center 40%"></figure>
+<p class="tag">01 · United States</p><h3>Collection, processing and refining of enterprise electronics.</h3>
+<p>Secure, documented recovery of end-of-life technology under chain-of-custody control, returning material value to U.S. supply chains.</p></a>
+<a class="service service-link reveal" href="/services/"><figure><img src="/assets/img/mine-aerial.webp" alt="Terraced open-pit mine in tropical highlands" loading="lazy"></figure>
+<p class="tag">02 · Philippines</p><h3>Primary gold and silver production, with co-product critical minerals.</h3>
+<p>Export-licensed supply of tungsten, copper, uranium, cobalt, antimony, zinc, lead and iron, allocated exclusively to U.S. refining and off-take partners.</p></a>
+</div>
+<div class="reveal" style="margin-top:2rem"><a class="btn btn-navy" href="/services/">Explore Our Services {I["arrow"]}</a></div>
+</div></section>
+
 <section class="section section-navy"><div class="wrap two-col">
 <div class="reveal"><span class="eyebrow" style="display:block;margin-bottom:1rem">Value Proposition</span>
 <h2 class="h2">Where others process waste,<br>APEX engineers circular infrastructure.</h2>
 <p class="sub" style="margin-top:1.5rem">APEX converts end-of-life technology from cost exposure into structured enterprise value.</p>
 <div style="margin-top:2rem"><a class="btn btn-gold" href="/solutions/">Explore Our Platform {I["arrow"]}</a></div></div>
-<div class="reveal">{checks(["Fully integrated lifecycle control","Institutional-grade security infrastructure","Structured, auditable reporting","Multi-margin value capture","Enterprise partnership model"])}</div>
+<div class="reveal">{checks(["Fully integrated lifecycle control","Institutional-grade security infrastructure","Structured, auditable reporting","Multi-margin value capture","Export-licensed critical-mineral supply to the United States","Enterprise partnership model"])}</div>
 </div></section>
 
 <section class="section"><div class="wrap cta reveal">
 <span class="eyebrow">Get In Touch</span>
-<h2 class="h2">Ready to institutionalize your supply chain?</h2>
-<p class="sub">Our partners require precision execution, documented accountability, and scalable infrastructure — not fragmented vendors.</p>
+<h2 class="h2">Ready to secure your supply chain?</h2>
+<p class="sub">Precision execution, documented accountability and scalable infrastructure, from one partner rather than a chain of vendors.</p>
 <a class="btn btn-navy" href="{CONTACT}">Contact APEX {I["arrow"]}</a>
 </div></section>'''
 
@@ -151,7 +164,7 @@ ABOUT = hero(
 <section class="section"><div class="wrap two-col two-col-top">
 <div class="reveal"><span class="eyebrow" style="display:block;margin-bottom:.75rem">Purpose</span><h2 class="h2 h2-sm">Control, accountability, and measurable value.</h2>
 <p class="sub" style="margin-top:1.25rem">To bring control, accountability, and measurable value to the circular management of enterprise technology.</p>
-<p class="sub" style="margin-top:1rem">We institutionalise circularity — embedding security, structure, and performance into every stage of the technology lifecycle.</p></div>
+<p class="sub" style="margin-top:1rem">We make circularity a standard operating practice, embedding security, structure and performance into every stage of the technology lifecycle.</p></div>
 <div class="reveal"><span class="eyebrow" style="display:block;margin-bottom:.75rem">Vision</span><h2 class="h2 h2-sm">The global benchmark for circular supply infrastructure.</h2>
 <p class="sub" style="margin-top:1.25rem">To become the global benchmark for integrated circular supply infrastructure — where technology recovery drives financial performance, risk resilience, and sustainable growth.</p>
 <p style="margin-top:1rem;font-weight:600;font-size:.95rem">Transforming end-of-life technology from cost exposure into a continuous source of value and competitive advantage.</p></div>
@@ -174,13 +187,14 @@ ABOUT = hero(
 </div></section>
 
 <section class="section section-muted"><div class="wrap">
-<div class="section-head reveal"><span class="eyebrow">Strategic Objectives</span><h2 class="h2">How the brand supports revenue,<br>growth, and market leadership.</h2></div>
+<div class="section-head reveal"><span class="eyebrow">Strategic Priorities</span><h2 class="h2">Where we are taking<br>the business.</h2></div>
 {cards([
     ("check", "Establish Category Leadership", "Position APEX as the benchmark for integrated circular supply infrastructure — not transactional ITAD."),
     ("check", "Drive Enterprise Adoption", "Embed lifecycle recovery into enterprise procurement and risk frameworks as a standard operating requirement."),
-    ("check", "Expand Platform Integration", "Scale geographically and vertically through integrated processing, refinement, and reintegration capabilities."),
-    ("check", "Increase Margin Capture", "Control more of the lifecycle to optimize value recovery, resale, and material refinement economics."),
+    ("check", "Expand Platform Integration", "Scale geographically and vertically, from electronics recovery and refining in the United States to primary mineral production in the Philippines."),
+    ("check", "Increase Margin Capture", "Control more of the lifecycle, from collection to refined material, to optimize value recovery and refinement economics."),
     ("check", "Institutionalize ESG Performance", "Deliver quantifiable sustainability metrics that meet investor, regulatory, and stakeholder scrutiny."),
+    ("check", "Secure Critical-Mineral Supply", "Allocate export-licensed co-product minerals from our Philippine operations to U.S. refining and off-take partners."),
 ], cls="grid grid-3")}
 </div></section>'''
 
@@ -199,7 +213,7 @@ VERTICALS = [
     ("Enterprise Manufacturing", "Complex asset pools requiring lifecycle optimization."),
 ]
 SOLUTIONS = hero(
-    img="hero-solutions.webp", eyebrow="Messaging Framework",
+    img="hero-solutions.webp", eyebrow="Our Platform",
     h1="Five pillars of<br>enterprise infrastructure.",
     lead="Our model integrates collection, secure processing, data destruction, asset refurbishment, material refinement, and reintegration into a controlled ecosystem.",
 ) + f'''
@@ -218,15 +232,15 @@ SOLUTIONS = hero(
 <section class="section section-muted"><div class="wrap two-col two-col-top">
 <div class="reveal"><span class="eyebrow" style="display:block;margin-bottom:.75rem">Industry Verticals</span><h2 class="h2 h2-sm" style="margin-bottom:2.5rem">Sectors where risk, compliance, and data sensitivity are high.</h2>
 <ul class="verticals">{"".join(f"<li><div><strong>{h}</strong><span>{p}</span></div></li>" for h,p in VERTICALS)}</ul></div>
-<div class="reveal"><span class="eyebrow" style="display:block;margin-bottom:.75rem">Proof Points</span><h2 class="h2 h2-sm" style="margin-bottom:2.5rem">Evidence reduces perceived risk.</h2>
-{checks(["Certified data destruction standards","Chain-of-custody documentation","Processing facility controls","Recovery rate metrics","ESG impact reporting","Enterprise case studies","Long-term partnership contracts"])}</div>
+<div class="reveal"><span class="eyebrow" style="display:block;margin-bottom:.75rem">What we document</span><h2 class="h2 h2-sm" style="margin-bottom:2.5rem">Records you can hold us to.</h2>
+{checks(["Certified data destruction certificates","Chain-of-custody documentation for every asset","Processing facility controls and audit trails","Recovery-rate and material-yield reporting","ESG impact reporting aligned to recognised frameworks","Technical review of our mineral operations, available on request"])}</div>
 </div></section>
 
 <section class="section section-navy"><div class="wrap cta reveal">
 <span class="eyebrow">Most competitors specialize in one stage.</span>
 <h2 class="h2">Few control the full system.</h2>
-<p class="sub">Our partners require precision execution, documented accountability, and scalable infrastructure — not fragmented vendors.</p>
-<a class="btn btn-gold" href="{CONTACT}">Engage APEX {I["arrow"]}</a>
+<p class="sub">From secure collection and refining in the United States to primary mineral production across the Pacific, APEX operates the stages others outsource.</p>
+<div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center"><a class="btn btn-gold" href="{CONTACT}">Engage APEX {I["arrow"]}</a><a class="btn btn-outline" href="/services/">Critical Minerals Supply</a></div>
 </div></section>'''
 
 MINERALS_OWN = ["Gold", "Silver"]
@@ -283,9 +297,9 @@ SERVICES = hero(
 </div></section>'''
 
 PAGES = [
-    dict(path="/", title="Home", desc="APEX SCM operates a fully integrated circular supply platform for enterprise technology. Precision. Security. Scale.", body=HOME),
+    dict(path="/", title="Home", desc="APEX SCM: circular supply infrastructure for enterprise technology in the United States, and export-licensed critical-mineral supply from our Philippine operations. Precision. Security. Scale.", body=HOME),
     dict(path="/about/", title="About", desc="APEX operates as infrastructure, not a recycler. Purpose, vision, core values and strategic objectives.", body=ABOUT),
-    dict(path="/solutions/", title="Solutions", desc="Five pillars of enterprise circular supply infrastructure: security, value recovery, lifecycle integration, ESG performance and partnership.", body=SOLUTIONS),
+    dict(path="/solutions/", title="Solutions", desc="Five pillars of enterprise circular supply infrastructure: security, value recovery, lifecycle integration, ESG performance and partnership, plus critical-mineral supply.", body=SOLUTIONS),
     dict(path="/services/", title="Services", desc="U.S. electronics collection, processing and refining. Primary gold and silver production in the Philippines with co-product critical minerals, export licensed, allocated to U.S. off-take partners.", body=SERVICES, og_image="/assets/img/mine-aerial.webp"),
 ]
 
