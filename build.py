@@ -49,7 +49,7 @@ def footer():
 <div class="foot-grid">
 <div class="foot-brand"><img src="/assets/img/logo-reversed.png" alt="APEX" width="1024" height="319"><p>Integrated circular supply infrastructure for enterprise technology. Precision. Security. Scale.</p></div>
 <div><p class="foot-h">Navigation</p><ul class="foot-links">{links}<li><a href="{CONTACT}">Contact</a></li></ul></div>
-<div><p class="foot-h">Contact</p><div class="foot-contact"><a href="mailto:{EMAIL}">{EMAIL}</a><span>North America · Europe</span></div></div>
+<div><p class="foot-h">Contact</p><div class="foot-contact"><a href="mailto:{EMAIL}">{EMAIL}</a><span>North America · Europe · Asia-Pacific</span></div></div>
 </div>
 <div class="foot-bottom"><p>&copy; 2026 APEX SCM Corp. All rights reserved.</p><span class="tag">PRECISION. SECURITY. SCALE.</span></div>
 </div></footer>'''
